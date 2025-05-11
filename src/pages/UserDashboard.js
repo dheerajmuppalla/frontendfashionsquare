@@ -24,7 +24,7 @@ const UserDashboard = () => {
 
         // Fallback sizes only if none provided, no predefined values
         if (sizes.length === 0) {
-          if (productNameLower.includes('night') && productNameLower.includes('pants') || productNameLower.includes('jeans')) {
+          if ((productNameLower.includes('night') && productNameLower.includes('pants')) || productNameLower.includes('jeans')) {
             sizes = [];
           } else if (productNameLower.includes('shirts') || productNameLower.includes('hoddies') || productNameLower.includes('t-shirts') || productNameLower.includes('shorts') || productNameLower.includes('boxers') || productNameLower.includes('blouses') || productNameLower.includes('kurthas')) {
             sizes = [];

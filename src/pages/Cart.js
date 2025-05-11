@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { CartProvider, useCart } from '../context/CartContext';
 
@@ -15,7 +15,8 @@ const CartContent = () => {
     } else if (savedCart.length !== cart.length) {
       setCart(savedCart);
     }
-  }, [location.state, setCart]);
+  }, [location.state, cart.length, setCart]);
+  
 
   const removeFromCart = (productId) => {
     const updatedCart = cart.filter(item => item.id !== productId);

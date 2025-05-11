@@ -19,9 +19,13 @@ const Home = () => {
     updateTitle(); // Set initial title
     window.addEventListener('resize', updateTitle);
 
-    // Cleanup event listener
     return () => window.removeEventListener('resize', updateTitle);
   }, []);
+
+  // Update browser tab title
+  useEffect(() => {
+    document.title = dynamicTitle;
+  }, [dynamicTitle]);
 
   const discountAds = [
     {
@@ -97,7 +101,9 @@ const Home = () => {
                 </div>
                 <h3 className="home-offer-title">{ad.title}</h3>
                 <p className="home-offer-description">{ad.description}</p>
-                <button className="home-offer-cta">{ad.cta}<span className="home-offer-arrow">→</span></button>
+                <button className="home-offer-cta">
+                  {ad.cta} <span className="home-offer-arrow">→</span>
+                </button>
               </div>
             ))}
           </div>
